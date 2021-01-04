@@ -1,0 +1,56 @@
+<!--
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    This code utilizes the materialize library.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+
+
+<!--Add the subtitle of the page.-->
+
+<%- include('layouts/nameBanner', { text: `${name}'s admin tools` }) %>
+
+
+<!--Show the different options in responsive columns.
+    Each card has a mouse hover effect that adds a shadow, a tooltip that provides
+    more info and a link to the corresponding page.-->
+<div class="row transition-fade">
+    <div class="col s6 m4 l3 offset-l1">
+
+        <!--Contacts/Friends.-->
+        <a href="/editbackground" class="light-green-text">
+            <div class="card hoverable tooltipped" data-position="bottom" data-tooltip="Edit backgrounds' text margins">
+                <div class="card-image">
+                    <img src="imgs/edit backgrounds.jpg">
+                    <span class="card-title sizeTwoSpan">Edit backgrounds</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col s6 m4 l4">
+
+        <!--New book.-->
+        <a href="/users" class="light-green-text">
+            <div class="card hoverable tooltipped" data-position="bottom" data-tooltip="Manage user accounts">
+                <div class="card-image">
+                    <img src="imgs/family2.png">
+                    <span class="card-title sizeTwoSpan">User accounts</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col s6 m4 l3">
+
+        <!--View saved books.-->
+        <a href="/allbooks" class="light-green-text">
+            <div class="card  hoverable tooltipped" data-position="bottom" data-tooltip="Manage all saved storybooks">
+                <div class="card-image">
+                    <img src="imgs/books2.png">
+                    <span class="card-title sizeTwoSpan">All storybooks</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

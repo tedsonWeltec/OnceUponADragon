@@ -1,0 +1,260 @@
+/* Transition between pages. */
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateY(-20deg);
+        
+    }
+    to {
+        opacity: 1;
+        transform: rotateY(0);
+    }
+}
+
+
+body {
+    background-color:#c5e1a5;
+}
+
+.transition-fade {
+    animation: transitionIn 0.75s;
+}
+
+.fadeOut {
+    opacity: 1;
+    transition-duration: 1.5s;
+}
+.fadeOutDone {
+    opacity: 0;
+    transition-duration: 1.5s;
+}
+
+.fadeIn {
+    opacity: 0;
+    transition-duration: 1.5s;
+}
+
+.fadeInDone {
+    opacity: 1;
+    transition-duration: 1.5s;
+}
+
+/* Different text sizes, colors and styles for the cards. */
+
+.bigTitleSpan {
+    font-weight: bold !important;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 3px 3px 0 #000;
+    font-size: 3rem !important;
+    color:#e8f5e9;
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(andyb.ttf);
+  }
+
+.bookpageTextSpan {
+    font-weight: bold !important;
+    text-shadow:
+        0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black,
+        0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black,
+        0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black,
+        0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+    font-size: 2.4rem !important;
+    color:#e8f5e9;
+    font-family: myFirstFont;
+}
+
+.sizeTwoSpan {
+    font-weight: bold !important;
+    
+    text-shadow:
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        -1px -1px 0 #000;
+    font-size: 2rem !important;
+    color:#e8f5e9 !important;
+}
+
+.sizeOneFiveSpan {
+    font-weight: bold !important;
+    
+    text-shadow:
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        -1px -1px 0 #000;
+    font-size: 1.5rem !important;
+    color:#e8f5e9 !important;
+}
+
+.greenSizeOneFiveSpan {
+    font-weight: bold !important;
+    font-size: 1.5rem !important;
+    color: #2e7d32;
+    text-shadow:
+        1px 1px 0 #FFF,
+        1px -1px 0 #FFF,
+        -1px 1px 0 #FFF,
+        -1px -1px 0 #FFF;
+    
+}
+
+.sizeOneSpan {
+    font-weight: bold !important;
+    
+    text-shadow:
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        -1px -1px 0 #000;
+    font-size: 1rem !important;
+    color:#e8f5e9 !important;
+}
+
+.greenSizeOneSpan {
+    font-weight: bold !important;
+    font-size: 1rem !important;
+    color: #2e7d32;
+    text-shadow:
+        1px 1px 0 #FFF,
+        1px -1px 0 #FFF,
+        -1px 1px 0 #FFF,
+        -1px -1px 0 #FFF;
+    
+}
+
+.logoSpan {
+    font-weight: bold !important;
+    text-shadow: 2px 2px 0 #000;
+    color:#e8f5e9;
+}
+
+/* Card's backgrounds */
+
+.moonBackground {
+    background-image: url("/imgs/moon background.jpg");
+    background-size: cover;
+}
+
+.spaceBackground {
+    background-image: url("/imgs/space background.jpg");
+    background-size: cover;
+}
+
+.bookBackground {
+    background-image: url('/imgs/book background.jpg');
+    background-size: cover;
+}
+
+.skyBackground {
+    background-image: url('/imgs/sky background.jpg');
+    background-size: contain;
+}
+
+.skyBackground2 {
+    background-image: url('/imgs/sky background 2.png');
+    background-size: contain;
+}
+
+.newbookBackground {
+    background-image: url('/imgs/newbook.png');
+    background-size: cover;
+}
+
+/* Margin fix for the Materialize default values */
+
+.col {
+    margin-bottom: 0px;
+}
+.row {
+    margin-bottom: 0px;
+}
+
+
+/* Form styling */
+
+/* label focus color */
+.input-field input:focus+label {
+    color: #2e7d32 !important;
+}
+
+/* label underline focus color */
+.row .input-field input:focus {
+    border-bottom: 1px solid #2e7d32 !important;
+    box-shadow: 0 1px 0 0 #2e7d32 !important
+}
+
+/* valid color */
+.input-field .valid {
+    border-bottom: 1px solid #2e7d32;
+    box-shadow: 0 1px 0 0 #2e7d32;
+}
+
+/* invalid color */
+.input-field .invalid {
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 red;
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: #2e7d32;
+}
+
+
+
+/* Tooltip and collections styling */
+
+.material-tooltip {
+    background-color: #2e7d32;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+    font-weight: bold !important;
+    color:#e8f5e9;
+}
+
+.collection-item {
+    padding: 10px 10px !important;
+    background-color: rgba(0,0,0,0) !important;
+}
+
+.collection-item.active {
+    background-color: #8bc34a !important;
+}
+
+.collection-item.header {
+    padding: 20px 10px !important;
+}
+
+
+/* Alignments for the characters to be displayed in the book page */
+
+.bottomleft {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 10% !important;
+    left: 20px !important;
+    right: auto !important;
+    width: 25% !important;
+}
+
+.bottomRight {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 10% !important;
+    left: auto !important;
+    right: 20px !important;
+    width: 25% !important;
+}
+
+.bottomCenter {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 10% !important;
+    left: 37.5% !important;
+    right: auto !important;
+    width: 25% !important;
+}

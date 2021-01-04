@@ -1,0 +1,40 @@
+<!--
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+
+<div id="themesDialog" class="row light-green lighten-3 fadeIn hide">
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card">
+            <div class="card-content newbookBackground center-align" style="padding: 15px;">
+                <span class="sizeTwoSpan">Pick what themes to use</span>
+                <div class="row">
+                    <% themes.forEach(theme => { %>
+                    <div class="col s12 m6 l4 modal-close">
+                        <label for="<%- theme.substr(0, theme.lastIndexOf('.')).replace(/ /g,"") %>">
+                            <input id="<%- theme.substr(0, theme.lastIndexOf('.')).replace(/ /g,"") %>" class="themeSelector" name="theme" type="checkbox"
+                                value="<%- theme.substr(0, theme.lastIndexOf('.')).replace(/ /g,"") %>" />
+                            <div class="card hoverable green darken-3" id="<%- theme.substr(0, theme.lastIndexOf('.')).replace(/ /g,"") %>Card">
+                                <div class="card-content">
+                                    <img src="imgs/themes/<%- theme %>" style="max-width: 100%; max-height: 100%;">
+                                    <span class="sizeTwoSpan" style="text-transform: capitalize;"><%- theme.substr(0, theme.lastIndexOf('.')) %></span>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <% }); %>
+                </div>
+
+                <!--The below code is the button which will send the textbox inputs through and start the creation process.-->
+
+                <div class="center-align">
+                    <button id="btnStart" class="s2 btn waves-effect waves-light green darken-3">Begin creation!
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

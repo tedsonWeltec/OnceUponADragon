@@ -1,0 +1,117 @@
+<!--
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    This code shows the register page where the user can make a new account.
+    It displays a form with several text inputs for the name, email,
+    username and password, with a button to send the form to the router.
+    This code utilizes the materialize library.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+
+<div class="row light-green lighten-3 transition-fade">
+    
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card">
+            <div class="card-content bookBackground ">
+
+                <!--Display a small header with the page's title-->
+                <span class="bigTitleSpan light-green-text text-lighten-5">Register a new account</span>
+                <!--Leave a little bit of space between the header and the form-->
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <form action="/register" method="POST">
+
+                    <!--The below is a textbot input for the users name,
+                        this will be the name displayed to the user upon
+                        logging in to their registrated account.-->
+
+                    <div class="row">
+                        <div class="input-field col s7">
+                            <i class="material-icons prefix">person</i>
+                            <input id="fullName" type="text" class="validate" name="fullName"
+                                required aria-required="true" pattern="[A-Za-z ]{1,}"
+                                value="<% if (locals.fullName) { %><%= fullName %><% } %>">
+                            <label for="fullName">Display Name (only letters and space)</label>
+                        </div>
+                    </div>
+
+                    <!--The below is a textbot input for the users email,
+                        this will be used in the case of losing the
+                        password to the account.-->
+
+                    <div class="row">
+                        <div class="input-field col s7">
+                            <i class="material-icons prefix">email</i>
+                            <input id="email" type="email" class="validate" name="email"
+                                required aria-required="true"
+                                value ="<% if (locals.email) { %><%= email %><% } %>">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s11 offset-s1">
+                            <label>
+                            <input id="showEmail" type="checkbox" name="showEmail">
+                            <span>Show email on credits page</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!--The below is a textbot input for the users desired username,
+                        this will be the identity used to login to the registrated account.-->
+
+                    <div class="row">
+                        <div class="input-field col s7">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="userName" type="text" class="validate" name="userName"
+                                required aria-required="true" pattern="[A-Za-z0-9]{1,}"
+                                value="<% if (locals.userName) { %><%= userName %><% } %>">
+                            <label for="userName">Username (to login)</label>
+                        </div>
+                    </div>
+
+                    <!--The below is a textbot input for the users desired password,
+                        this will be the authentication used to login to the registrated account.-->
+
+                    <div class="row">
+                        <div class="input-field col s7">
+                            <i class="material-icons prefix">vpn_key</i>
+                            <input id="password" type="password" class="validate"
+                                name="password" required aria-required="true" pattern=".{6,}">
+                            <label for="password">Password (min 6 characters)</label>
+                        </div>
+                    </div>
+
+                    <!--The below is a textbot input to confirm the users desired password-->
+
+                    <div class="row">
+                        <div class="input-field col s7">
+                            <i class="material-icons prefix">vpn_key</i>
+                            <input id="password2" type="password" class="validate" name="password2" required aria-required="true">
+                            <label for="password2">Confirm Password</label>
+                        </div>
+                    </div>
+
+                    <!--The below is the submit button with the label Register-->
+
+                    <br>
+                    <button class="s2 btn waves-effect waves-light green darken-3" type="submit">Register
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+
+
+                <!--If there are any errors, the router will take the user back here and display
+                    an error message.-->
+
+                <% if (locals.errorMessage) { %><p>&nbsp;</p><p class="red-text"><%= errorMessage %></p><% } %>
+            </div>
+
+            <!--Card footer with the option to go back to the login screen.-->
+
+            <div class="card-action">
+                <a href="/login" class="light-green-text">Back to login</a>
+            </div>
+        </div>
+    </div>
+</div>

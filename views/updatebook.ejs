@@ -1,0 +1,42 @@
+<script src='js/updatebook.js'></script>
+
+<div>
+    <div class="row">
+        <div class="col s12 m10 offset-m1 l8 offset-l2">
+            <div class="card">
+                <div class="card-image" style="background-image: url(imgs/backgrounds/default.jpg);">
+                    <textarea id="pageInput" class="materialize-textarea bookpageTextSpan" placeholder=""
+                        data-length="999" maxlength="999" style="margin-top: 10%;"></textarea>
+                </div>
+
+                <div class="card-content" style="padding: 20px">
+                    <div class="row">
+                        <div class="col s12 m4 l4 center-align">
+                            <a id="btnPreviousPage" class="btn waves-effect waves-light green darken-3"
+                                style="margin-top: 5px; width: 100%;">
+                                <i class="material-icons left">navigate_before</i>Previous page
+                            </a>
+                        </div>
+                        <div class="col s12 m4 l4 center-align">
+                            <a id="btnFinishEditing" class="btn waves-effect waves-light green darken-3"
+                                style="margin-top: 5px; width: 100%;">
+                                <i class="material-icons right">face</i>Finish editing
+                            </a>
+                        </div>
+                        <div class="col s12 m4 l4 center-align">
+                            <a id="btnNextPage" class="btn waves-effect waves-light green darken-3"
+                                style="margin-top: 5px; width: 100%;">
+                                <i class="material-icons right">navigate_next</i>Next page
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<form id="saveForm" action="/updatebook" method="POST" class="hide"> <!--Hide-->
+    <input id="saveFormInput" type="text" name="tempBook" value='<%- book %>'>
+</form>

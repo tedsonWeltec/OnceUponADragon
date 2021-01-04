@@ -1,0 +1,67 @@
+<!--
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    This code shows the page where the user can create a new interactive book.
+    It has several stages, each div has an animation triggered by the newbook.js and the stylesheet.
+    First stage:
+        It shows a form where the user can input the player's names and select their colors.
+    Second stage:
+        Displays the actual book page with a textbox at the bottom where players can type.
+        Also displays the player's list to a side with the current player selected.
+    Third stage:
+        Displays an input to write the title of the book.
+    This code utilizes the materialize library.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+
+
+<!-- Scripts to initialize Average Color and Newbook -->
+<script src="js/fast-average-color/index.min.js"></script>
+<script src='js/newbook.js'></script>
+
+
+<!--Add the subtitle of the page.-->
+
+<%- include('layouts/nameBanner', { text: `${name}'s New Storybook` }) %>
+
+
+<!--Form with all players inputs.-->
+
+<%- include('newbook/playersDialog', { colors: locals.colors }) %>
+
+
+<%- include('newbook/themesDialog'), { themes: locals.themes } %>
+
+
+<!--This is a hidden list of backgrounds and characters. This list is used to
+    populate the internal variables of newbook.js with the characters and backgrounds
+    to be used during the book creation process.-->
+
+<ul class="hide">
+    <% characters.forEach(character => { %>
+    <li class="characterData"><%- character %></li>
+    <% }); %>
+    <% backgrounds.forEach(background => { %>
+    <li class="backgroundData"><%- background %></li>
+    <% }); %>
+    <% prompts.forEach(prompt => { %>
+    <li class="promptData"><%- prompt %></li>
+    <% }); %>
+    <li id="bookType">creation</li>
+</ul>
+
+
+<!--Book creation section. In here, a book page is shown with a textbox below
+    And a list of players to the side.-->
+
+<%- include('newbook/bookCreation') %>
+
+
+
+<%- include('newbook/bookFinish') %>
+
+
+<iframe name="hiddenIframe" class="hide"></iframe>
+<form id="saveForm" action="/savebook" method="POST" target="hiddenIframe" class="hide">
+    <input id="saveFormInput" type="text" name="tempBook">
+</form>
+

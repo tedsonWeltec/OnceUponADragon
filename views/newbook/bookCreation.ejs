@@ -1,0 +1,100 @@
+<div id="bookCreation" class="fadeIn hide">
+    <div class="row ">
+
+
+        <!--
+        <div class="col s12 m12 l2">
+            <ul id="endingDisplay" class="collection z-depth-1 newbookBackground">
+                <li class="collection-item header sizeOneFiveSpan">Suggested ending</li>
+                <li class="greenSizeOneFiveSpan">So they promised never to fight again.</li>
+                <li class="center-align">
+                    <a id="btnChangeEnding" class="btn waves-effect waves-light green darken-3">
+                        Change ending
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        -->
+
+        <!--Book page. It has a background, dynamically modified by the code.
+            And 3 characters, that also get dynamically populated by the code.-->
+        <div class="col s12 m8 l7 offset-l2">
+            <div class="card" style="margin: .5rem .5rem 1rem .5rem;">
+                <div class="card-image">
+                    <img id="pageBackground" src="imgs/backgrounds/default.jpg">
+                    <span id="pageText" class="card-title bookpageTextSpan" style="z-index: 1; top: 0; right: 0;"></span>
+                    <img id="character1" src="" class="bottomleft">
+                    <img id="character3" src="" class="bottomCenter">
+                    <img id="character2" src="" class="bottomRight">
+                </div>
+
+
+                <!--Form with the textbox input, next player and next page buttons.-->
+
+                <div class="card-content" style="padding: 20px">
+                    <div class="row">
+                        <div class="col s1 m1 l1">
+                            <a id="btnPrompts" href="#prompts"
+                                class="modal-trigger btn-floating green darken-3 tooltipped"
+                                data-tooltip="Get an idea for a story">
+                                <i class="material-icons">emoji_objects</i>
+                            </a>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <a id="btnChangeEnding" class="btn-floating green darken-3 tooltipped"
+                                data-tooltip="Get a new suggested ending" data-position="top">
+                                <i class="material-icons">refresh</i>
+                            </a>
+                        </div>
+                        <div class="col s11 m5 l7">
+                            
+                            
+                            <!--Players type their story in here.-->
+                            
+                            <textarea id="pageInput" class="materialize-textarea" placeholder="Type your story here..."
+                                data-length="1" maxlength="1"></textarea>
+
+
+                            <span class="sizeOneFiveSpan">SE: </span><span id="endingPrompt" class="greenSizeOneFiveSpan">So they promised never to fight again.</span>
+                        </div>
+                        <div class="col s12 m6 l4 center-align">
+
+                            <!--Next player and Next page buttons.-->
+
+                            <a id="btnNextPlayer" class="btn waves-effect waves-light green darken-3"
+                                style="margin-top: 5px; width: 100%;">
+                                <i class="material-icons right">face</i>Next player
+                            </a>
+                            <a id="btnNextPage" class="btn waves-effect waves-light green darken-3"
+                                style="margin-top: 5px; width: 100%;">
+                                <i class="material-icons right">library_books</i>Next page
+                            </a>
+                            <a id="btnFinishBook" class="btn waves-effect waves-light green darken-3"
+                                style="margin-top: 5px; width: 100%;">
+                                <i class="material-icons right">book</i>Finish book
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--This is a collection of elements with a header that display the player list.-->
+
+        <div class="col s12 m4 l3">
+            <ul id="playerList" class="collection z-depth-1 newbookBackground">
+                <li class="collection-item header sizeTwoSpan">Players</li>
+                <!--Players get put in here by the script.-->
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<div id="prompts" class="modal">
+    <div class="modal-content light-green lighten-3">
+        <span id="promptText" class="sizeOneFiveSpan">This is a prompt that will be filled dynamically (perhaps a text file)</span>
+    </div>
+</div>

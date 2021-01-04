@@ -1,0 +1,44 @@
+Cover
+Welcome to the Infinitybook website! This help section will guide you through the process of loading a story using a storycode, as well as creating a new account to create your own stories.
+
+viewstory
+If you want to load an existing story, you do not need to log in or register as a user, but you do need to know a story code. First, simply click on the image link shown on the home page to access the load story page.
+
+loadstory
+From this page, input a story code and press 'enter' to load a story. If the code is valid, you will now be able to read one of the stories written on the Infinitybook website.
+
+account
+If you wish to lead a story writing session for a group of writers, the first step to log in or create an account. From the home page, click on the image link shown to access the login page.
+
+login
+On the login page, if you have an account already you may enter your details to move towards the next step. If you do not yet have an account, click on 'Create a new account' to make a new account.
+
+register
+From the register page, a few details are required to make your new account. Display name is the name that will be show publicly on stories written using your account, email may be used to contact users and you may choose to show your email address on the credit page for your stories. Username and password are the login details for your account, and will not be shown to others.
+
+home
+After registering and logging into your account, you will be brought to the home page. From this page you can create a new story, or access any stories saved on your account.
+
+newstory
+To start a new story, first click on the new storybook image
+
+setup
+This will bring you to the setup page, where writer names and icon colours can be selected. These will be used to identify who wrote what parts of the story, and included in the credits page of the story.
+
+theme
+The theme selection page allow you to select the theme set for your story. This affects what images can be used during your story, for example the cartoon theme allows cartoony characters to pop up. Multiple themes can be selected at once!
+
+write
+After writers have been entered and theme selected, the story writing session will begin. Writers can now take turns writing in the story book (current turn shown by the highlighted player on the right).
+
+write2
+As the story is written, characters and backgrounds will appear. At any stage, you may chose to continue to a new page, or to finish writing the book.
+
+save
+When finishing the story, choose a name that will also show backgrounds and characters, before clicking 'save book'
+
+code
+At this point, you will be shown the story code. This code can be shared with friends or family, and anyone with this code can view the story at any time using this website!
+
+savedbooks
+You may also edit or delete stories from the saved stories page on the home page of your account, if you want to adjust or remove older stories. 

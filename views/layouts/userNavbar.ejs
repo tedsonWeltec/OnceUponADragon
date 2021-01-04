@@ -1,0 +1,78 @@
+<!--Navbar template to use when the user is logged in.
+    It displays the website's name and a few links.
+    It also contains a side-bar that shows up when the user
+    visits the website on a small screen (tablet or phone)-->
+
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper green darken-3 light-green-text text-lighten-5">
+            <a href="/" class="brand-logo left">
+                <span class="logoSpan">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Infinitybook</span>
+            </a>
+            <a data-target="side-navigation" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <!--New storybook, Saved storybooks, etc.-->
+                <% if (isAdmin == true) { %>
+                    <li><a href="/admin"><i class="large material-icons left">engineering</i>Admin tools</a></li>
+                <% } %> 
+                <li><a class="toggleSounds"><i class="large material-icons left">volume_up</i>Sounds on</a></li>
+                <li><a href="/"><i class="large material-icons left">view_carousel</i>Main menu</a></li>
+                <li><a class="logout"><i class="large material-icons left">send</i>Logout</a></li>
+                <li><a href="/help"><i class="large material-icons left">help</i>Help</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<ul class="sidenav light-green lighten-3" id="side-navigation">
+    <% if (isAdmin == true) { %>
+        <li><a href="/admin"><i class="material-icons left">engineering</i>Admin tools</a></li>
+    <% } %> 
+    <li><a class="toggleSounds"><i class="material-icons left">volume_up</i>Sounds on</a></li>
+    <li><a href="/"><i class="material-icons left">view_carousel</i>Main menu</a></li>
+    <li><a class="logout"><i class="material-icons left">send</i>Logout</a></li>
+    <li><a href="/help"><i class="material-icons left">help</i>Help</a></li>
+</ul>
+
+
+<p id="sounds" class="hide"><%- sounds.toString() %></p>
+<iframe name="soundIframe" class="hide"></iframe>
+
+
+<!--This script picks up the logout button and submits the form when clicked-->
+
+<form id="logoutForm" action="/logout?_method=DELETE" method="POST"></form>
+<form id="soundsForm" action="/togglesound" method="POST" target="soundIframe"></form>
+
+<script>
+    $(".logout").click(() => {
+        $("#logoutForm").submit()
+    })
+    //console.log($("#sounds").text())
+    if ($("#sounds").text() == "true") {
+        //Play a book flip audio each time the user visits a new page
+        new Audio('/sfx/Book flip.mp3').play()
+    }
+
+    $(".toggleSounds").click(function () {
+        if ($("#sounds").text() == "true") {
+            $("#sounds").text("false")
+            $(".toggleSounds").each(function () {
+                $(this).html('<i class="material-icons left">volume_off</i>Sounds off</a>')
+            })
+        } else {
+            $("#sounds").text("true")
+            $(".toggleSounds").each(function () {
+                $(this).html('<i class="material-icons left">volume_up</i>Sounds on</a>')
+            })
+        }
+        $("#soundsForm").submit()
+    })
+
+    if ($("#sounds").text() == "false") {
+        $(".toggleSounds").each(function () {
+            $(this).html('<i class="material-icons left">volume_off</i>Sounds off</a>')
+        })
+    }
+    
+</script>

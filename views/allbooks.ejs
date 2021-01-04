@@ -1,0 +1,67 @@
+<!--
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    This page displays all the storybooks
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<form id="deleteBookForm" action="/deletebook2?_method=DELETE" method="POST">
+    <input id="code" name="code" type="text" class="hide">
+</form>
+<form id="viewbookForm" action="/viewbook" method="POST">
+    
+    <div class="transition-fade center-align">
+
+        <% locals.books.forEach(book => { %>
+            
+                <!--Get all the user's books and display them on cards. They all have an invisible radio button
+                    that when clicked (value changed), sends the form.-->
+
+                <label for="<%- book.code %>">
+                    <input id="<%- book.code %>" class="hide" name="code" type="radio" value="<%- book.code %>" onchange="this.form.submit();" />
+                    <div class="card hoverable" style="display: inline-block; margin: 1rem;">
+                        <div class="card-image">
+                            <img src="<%- book.cover.background %>" style="width: 400px;">
+                            <span class="card-title sizeOneFiveSpan" style="z-index: 1; top: 0; text-align: left;"><%- book.title %></span>
+                            <img src="<%- book.cover.character1 %>" class="bottomleft">
+                            <img src="<%- book.cover.character3 %>" class="bottomCenter">
+                            <img src="<%- book.cover.character2 %>" class="bottomRight">
+                        </div>
+                        <div class="card-content green darken-3">
+                            <span class="sizeOneFiveSpan" style="display: block;">Code: <%- book.code %></span>
+                            <span class="sizeOneFiveSpan">Owner: <%- book.authorName %></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" class="red-text"
+                                onclick="$('#code').val('<%- book.code %>'); $('#deleteBookForm').submit();">
+                                Delete book
+                            </a>
+                        </div>
+                    </div>
+                </label>
+                
+            
+        <% }); %> 
+        
+    </div>
+    
+</form>
+
+
+<!--Bottom menu.-->
+
+<div class="row transition-fade">
+    <div class="col s6 offset-s3 m4 offset-m4 l2 offset-l5">
+
+        <!--Card with the main menu link.-->
+
+        <a href="/admin" class="light-green-text">
+            <div class="card hoverable tooltipped" data-position="top" data-tooltip="Go back to the admin tools">
+                <div class="card-image">
+                    <img src="imgs/house.png">
+                    <span class="card-title sizeTwoSpan">Admin tools</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    
+</div>

@@ -1,0 +1,60 @@
+<!--
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    This page displays all the users (admin only)
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<form id="deleteUserForm" action="/deleteuser?_method=DELETE" method="POST">
+    <input id="id" name="id" type="text" class="hide">
+</form>
+
+<form id="userForm" action="/viewuser" method="POST">
+    
+    <div class="transition-fade center-align">
+
+        <% locals.users.forEach(user => { %>
+            
+                <!--Get all the users and display them on cards. They all have an invisible radio button
+                    that when clicked (value changed), sends the form.-->
+
+                <label for="<%- user.id %>">
+                    <input id="<%- user.id %>" class="hide" name="id" type="radio" value="<%- user.id %>" onchange="this.form.submit();" />
+                    <div class="card hoverable" style="display: inline-block; margin: 1rem;">
+                        <div class="card-image skyBackground">
+                            <img src="imgs/avatars/<%- user.avatar %>" style="width: 200px;">    
+                            <span class="card-title sizeOneFiveSpan"><%- user.fullName %></span>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" class="red-text"
+                                onclick="$('#id').val('<%- user.id %>'); $('#deleteUserForm').submit();">
+                                Delete user
+                            </a>
+                        </div>
+                    </div>
+                </label>
+            
+        <% }); %> 
+        
+    </div>
+    
+</form>
+
+
+<!--Bottom menu.-->
+
+<div class="row transition-fade">
+    <div class="col s6 offset-s3 m4 offset-m4 l2 offset-l5">
+
+        <!--Card with the main menu link.-->
+
+        <a href="/admin" class="light-green-text">
+            <div class="card hoverable tooltipped" data-position="top" data-tooltip="Go back to the admin tools">
+                <div class="card-image">
+                    <img src="imgs/house.png">
+                    <span class="card-title sizeTwoSpan">Admin tools</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    
+</div>

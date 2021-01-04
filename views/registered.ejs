@@ -1,0 +1,35 @@
+<!--
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    This code shows the registered page.
+    It displays a card with a small information text, telling the user the account was created successfully.
+    This code utilizes the materialize library.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+
+<div class="row light-green lighten-3 transition-fade">
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card">
+            <div class="card-content bookBackground light-green-text text-lighten-5">
+
+                <!--Display a registration complete message and information text.-->
+
+                <span class="bigTitleSpan">Registration complete!</span>
+                <p class="greenSizeOneFiveSpan">
+                    <br>
+                    <br>
+                    Welcome <%= userName %>!
+                    <br>
+                    <br>
+                    Your account has been created, now you can go to the login page and enter.
+                    <br>
+                </p>
+            </div>
+
+            <!--Card footer with the option to go back to the login screen.-->
+
+            <div class="card-action">
+                <a href="/login" class="light-green-text">Login</a>
+            </div>
+        </div>
+    </div>
+</div>

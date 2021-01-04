@@ -1,0 +1,29 @@
+<!--Navbar template to use when the user is not logged in.
+    It displays the website's name and a few links.
+    It also contains a side-bar that shows up when the user
+    visits the website on a small screen (tablet or phone)-->
+
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper green darken-3 light-green-text text-lighten-5">
+            <a href="/" class="brand-logo left">
+                <span class="logoSpan">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Infinitybook</span>
+            </a>
+            <a href="#" data-target="side-navigation" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/login"><i class="large material-icons left">send</i>Login</a></li>
+                <li><a href="/register"><i class="large material-icons left">input</i>Register</a></li>
+                <li><a href="/help"><i class="large material-icons left">help</i>Help</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<ul class="sidenav light-green lighten-3" id="side-navigation">
+    <li><a href="/login"><i class="material-icons left">send</i>Login</a></li>
+    <li><a href="/register"><i class="material-icons left">input</i>Register</a></li>
+    <li><a href="/help"><i class="material-icons left">help</i>Help</a></li>
+</ul>
+
+<script>
+    new Audio('/sfx/Book flip.mp3').play()
+</script>

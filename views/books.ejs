@@ -1,0 +1,95 @@
+<!--
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    This page displays the books that a user (teacher) have on cards.
+    Clicking them takes the user to the book display page.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+
+<!--Add the subtitle of the page.-->
+<%- include('layouts/nameBanner', { text: `${name}'s Books` }) %>
+
+<form id="editBookForm" action="/editbook" method="POST">
+    <input id="code" name="code" type="text" class="hide">
+</form>
+
+<form id="bookForm" action="/viewbook" method="POST">
+    
+    <div class="transition-fade center-align">
+
+        <% locals.books.forEach(book => { %>
+            
+                <!--Get all the user's books and display them on cards. They all have an invisible radio button
+                    that when clicked (value changed), sends the form.-->
+
+                <label for="<%- book.code %>">
+                    <input id="<%- book.code %>" class="hide" name="code" type="radio" value="<%- book.code %>" onchange="this.form.submit();" />
+                    <div class="card hoverable green darken-3" style="display: inline-block; margin: 1rem;">
+                        <div class="card-image">
+                            <img src="<%- book.cover.background %>" style="width: 400px;">
+                            <span class="card-title sizeOneFiveSpan" style="z-index: 1; top: 0; text-align: left;"><%- book.title %></span>
+                            <img src="<%- book.cover.character1 %>" class="bottomleft">
+                            <img src="<%- book.cover.character3 %>" class="bottomCenter">
+                            <img src="<%- book.cover.character2 %>" class="bottomRight">
+                        </div>
+                        <span class="sizeOneFiveSpan">Code: <%- book.code %> </span>
+                        <div class="card-action white">
+                            <a href="#" class="light-green-text"
+                                onclick="$('#code').val('<%- book.code %>'); $('#editBookForm').submit();">
+                                Edit book
+                            </a>
+                        </div>
+                    </div>
+                </label>
+            
+        <% }); %> 
+        
+    </div>
+    
+</form>
+
+
+<!--Bottom menu.-->
+
+<div class="row transition-fade">
+    <div class="col s6 m3 l2 offset-l2">
+
+        <!--Card with the main menu link.-->
+
+        <a href="/" class="light-green-text">
+            <div class="card hoverable tooltipped" data-position="top" data-tooltip="Go back to the main menu">
+                <div class="card-image">
+                    <img src="imgs/house.png">
+                    <span class="card-title sizeTwoSpan">Main menu</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col s6 m4 offset-m1 l2 offset-l1">
+
+        <!--Card with the new book link.-->
+
+        <a href="/newbook" class="light-green-text">
+            <div class="card hoverable tooltipped" data-position="top" data-tooltip="Create and share a new story">
+                <div class="card-image">
+                    <img src="imgs/newbook.png">
+                    <span class="card-title sizeTwoSpan">New storybook</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col s6 m3 offset-m1 l2 offset-l1">
+
+        <!--Card with the new book link.-->
+
+        <a href="/deletebook" class="light-green-text">
+            <div class="card hoverable tooltipped" data-position="top" data-tooltip="Delete a storybook">
+                <div class="card-image">
+                    <img src="imgs/delete.png">
+                    <span class="card-title sizeTwoSpan">Delete storybook</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,99 @@
+<!--
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    This code is simply representing an about/help section to the website.
+    This will give some brief information about the website and what it is about.
+    This code utilizes the materialize library.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+
+
+
+<div class="row light-green lighten-3 transition-fade">
+    
+    <div class="col s12 m10 offset-m1 l8 offset-l2">
+        <div class="card">
+            <div class="card-content spaceBackground light-green-text text-lighten-5">
+                <span class="bigTitleSpan">What is the Infinitybook?</span>
+
+                
+
+
+                <p class="sizeTwoSpan">
+                    <br>
+                    The Infinitybook is an interactive storybook, a new way of telling stories. You type and we illustrate your words, helping to tell the story. The main focus is to create new and innovative ways of telling stories.
+                    <br>
+                    <br>
+
+                    
+                    <div class="carousel carousel-slider">
+                        <a id="cover" class="carousel-item" href="#one!"><img src="imgs/help/Cover.PNG"></a>
+                        <a id="loadstory" class="carousel-item" href="#two!"><img src="imgs/help/loadstory.PNG"></a>
+                        <a id="login" class="carousel-item" href="#three!"><img src="imgs/help/login.PNG"></a>
+                        <a id="register" class="carousel-item" href="#four!"><img src="imgs/help/register.PNG"></a>
+                        <a id="newstory" class="carousel-item" href="#five!"><img src="imgs/help/newstory.PNG"></a>
+                        <a id="setup" class="carousel-item" href="#six!"><img src="imgs/help/setup.PNG"></a>
+                        <a id="theme" class="carousel-item" href="#seven!"><img src="imgs/help/theme.PNG"></a>
+                        <a id="write" class="carousel-item" href="#eight!"><img src="imgs/help/write.PNG"></a>
+                        <a id="write2" class="carousel-item" href="#nine!"><img src="imgs/help/write2.PNG"></a>
+                        <a id="save" class="carousel-item" href="#ten!"><img src="imgs/help/save.PNG"></a>
+                        <a id="code" class="carousel-item" href="#eleven!"><img src="imgs/help/code.PNG"></a>
+                        <a id="savedbooks" class="carousel-item" href="#twelve!"><img src="imgs/help/savedbooks.PNG"></a>
+                    </div>
+
+                </p>
+
+
+                <p id="carouselText" class="sizeTwoSpan" style="text-align: center;">
+                    Placeholder
+                </p>
+                
+            </div>
+
+            <!--If the user is not logged in, Show a login and register button.
+                Otherwise, display a back to the main menu button.-->
+            <% if (loggedIn == false) { %>
+                <div class="card-action">
+                    <a href="/login" class="light-green-text">Login</a><a href="/register" class="light-green-text">Create a new account</a>
+                </div>
+            <% } else { %>
+                <div class="card-action">
+                    <a href="/" class="light-green-text">Back to the main menu</a>
+                    <a href="/deleteaccount" class="red-text">Delete your account</a>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    
+</div>
+
+
+
+<script>
+    var helpTexts = {
+        cover: "Welcome to the Infinitybook website! This help section will guide you through the process of loading a story using a storycode, as well as creating a new account to create your own stories.",
+        loadstory: "From this page, input a story code and press 'enter' to load a story. If the code is valid, you will now be able to read one of the stories written on the Infinitybook website.",
+        login: "On the login page, if you have an account already you may enter your details to move towards the next step. If you do not yet have an account, click on 'Create a new account' to make a new account.",
+        register: "From the register page, a few details are required to make your new account. Display name is the name that will be show publicly on stories written using your account, email may be used to contact users and you may choose to show your email address on the credit page for your stories. Username and password are the login details for your account, and will not be shown to others.",
+        newstory: "To start a new story, first click on the new storybook image. To load a story, click on the saved storybooks image.",
+        setup: "This will bring you to the setup page, where writer names and icon colours can be selected. These will be used to identify who wrote what parts of the story, and included in the credits page of the story.",
+        theme: "The theme selection page allow you to select the theme set for your story. This affects what images can be used during your story, for example the cartoon theme allows cartoony characters to pop up. Multiple themes can be selected at once!",
+        write: "After writers have been entered and theme selected, the story writing session will begin. Writers can now take turns writing in the story book (current turn shown by the highlighted player on the right).",
+        write2: "Writers will have their icon displayed beside each segment they write, with the background and characters changing according to their text.",
+        save: "When finishing the story, choose a name to represent your creation. This will also show backgrounds and characters! When done, click 'save book'.",
+        code: "At this point, you will be shown the story code. This code can be shared with friends or family, and anyone with this code can view the story at any time using this website!",
+        savedbooks: "You may also edit or delete stories from the saved stories page on the homepage of your account, and adjust or remove older stories."
+    }
+    $(document).ready(function(){
+
+        $('.carousel.carousel-slider').carousel({
+            
+            indicators: true,
+            dist: -100,
+            fullWidth: true,
+            onCycleTo: function (params) {
+                $("#carouselText").html(helpTexts[params.id])
+            }
+        });
+    });
+</script>
+

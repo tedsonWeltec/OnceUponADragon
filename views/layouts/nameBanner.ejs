@@ -1,0 +1,19 @@
+<!--This is a simple card with a background that displays the user's name
+    and a custom message, provided by each page. Also adds the user's avatar
+    and a link to the change avatar page.-->
+
+<div id="nameBanner" class="row fadeOut">
+    <div class="col s12 m10 offset-m1 l8 offset-l2">
+        <div class="card">
+            <div class="card-content skyBackground light-green-text text-lighten-5" style="padding: 15px;">
+                <div class="valign-wrapper">
+                    <a href="/avatar" class="tooltipped" data-position="bottom" data-tooltip="Change your avatar">
+                        <img src="imgs/avatars/<%- user.avatar %>" width="67">
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="bigTitleSpan"><%- text %></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,314 @@
+a Contest	Event
+an Escape	Event
+Fighting	Event
+a Chase	Event
+Someone getting Hurt	Event
+a Rescue	Event
+Food	Thing
+a Ring	Thing
+a Sword	Thing
+a Trap	Thing
+a Key	Thing
+a Crown	Thing
+Treasure	Thing
+Beautiful	Aspect
+Brave	Aspect
+Disguised	Aspect
+Hidden	Aspect
+Healed	Aspect
+Stolen	Aspect
+Wise	Aspect
+Secret	Aspect
+a City	Place
+a Dungeon	Place
+a Garden	Place
+a Palace	Place
+a Road	Place
+a Tower	Place
+a Church	Place
+a King	Character
+a Prince	Character
+a Princess	Character
+a Queen	Character
+a Guard	Character
+a Cook	Character
+an Enemy	Character
+a Thief	Character
+And for all I know they may be dancing in the palace still.	Ending
+And the kingdom rejoiced at the end of the tyrant's reign.	Ending
+Despite his terrible crime, the king agreed to spare his life.	Ending
+Her courage had made her rich.	Ending
+She escaped that awful place and fled home.	Ending
+She never let her treasure out of her sight again.	Ending
+So he told her he was the prince and they lived happily ever after.	Ending
+So she revealed her true identity and they were married.	Ending
+So the cook prepared it for the feast and it was delicious.	Ending
+So the king relented and the two were married.	Ending
+So the queen gave them the prize as she had promised.	Ending
+So the rightful ruler was placed on the throne once more.	Ending
+So they escaped their captors and fled home.	Ending
+So they returned what was stolen to its original owner.	Ending
+The king fulfilled his side of the bargain and everyone was happy.	Ending
+The prince's madness was cured.	Ending
+Which meant they would become king and queen in the course of time.	Ending
+an Argument	Event
+a Sleeping person	Event
+Falling in Love	Event
+Making Mischief	Event
+a Meeting	Event
+a Plan	Event
+Parting Ways	Event
+an Axe	Thing
+Clothes	Thing
+a Door	Thing
+Stairs	Thing
+a Tree	Thing
+a Wall	Thing
+a Window	Thing
+Foolish	Aspect
+Frightened	Aspect
+Happy	Aspect
+Lucky	Aspect
+Sad	Aspect
+Ugly	Aspect
+Very Strong	Aspect
+Blind	Aspect
+Crazy	Aspect
+a Cottage	Place
+a Forest	Place
+a Kitchen	Place
+a River	Place
+a Village	Place
+a Home	Place
+a Beggar	Character
+a Brother or Sister	Character
+a Child	Character
+a Stepmother	Character
+a Parent	Character
+a Husband or Wife	Character
+an Old Person	Character
+an Orphan	Character
+And his mother was delighted with such an unusual gift.	Ending
+And she kept her father's advice in mind from that day onwards.	Ending
+And so the old woman's prophecy had been fulfilled.	Ending
+And the parents were reunited with their long-lost child.	Ending
+And they remained blind for the rest of their days for their wickedness and falsehood.	Ending
+And when they died they passed it on to their children.	Ending
+He lived the rest of his life as a beggar … which was perfectly just.	Ending
+He saw the error of his ways and lived a good life from that day forward.	Ending
+His wound was healed but his heart remained broken forever.	Ending
+It just shows that stepmothers aren't always what they seem.	Ending
+So he forgave her and they were married.	Ending
+So he realized how loyal his sister had been.	Ending
+So the village was restored to prosperity.	Ending
+So they changed places and everything was back to normal.	Ending
+So they promised never to fight again.	Ending
+Which proves that a heart that is brave and true will always triumph in the end.	Ending
+Which proves you should always be careful when choosing your companions.	Ending
+Someone Lost	Event
+Something Found	Event
+a Journey	Event
+a Storm	Event
+Transforming	Event
+Something Getting Returned	Event
+a Book	Thing
+a Cauldron	Thing
+a Fire	Thing
+a Spell	Thing
+a Well	Thing
+a Gift	Thing
+Cursed	Aspect
+Poisoned	Aspect
+This Can Fly	Aspect
+This Can Talk	Aspect
+Tiny	Aspect
+Wicked	Aspect
+Far Away	Aspect
+Long-lost	Aspect
+a Cave	Place
+a Place In the Sky	Place
+a Mountain	Place
+the Night	Place
+a Swamp	Place
+a Kingdom	Place
+a Ruin	Place
+a Fairy	Character
+a Giant	Character
+a Wolf	Character
+a Frog	Character
+a Horse	Character
+a Monster	Character
+a Dragon	Character
+a Witch	Character
+And as long as she lived it could never be removed.	Ending
+And so the witch perished in her own cauldron.	Ending
+Beaten, the foul creature was driven out of the kingdom.	Ending
+But no matter how hard they searched they were never able to find it again.	Ending
+Every day he saw the result of his disobedience, and wept.	Ending
+He was freed from his enchantment and the next day they wept.	Ending
+So it was transformed back into human form.	Ending
+So she knew that her visitor had been a monster all along.	Ending
+So the evil-doers were thrown down a well.	Ending
+So the spell was broken and they were free.	Ending
+The curse was lifted as had been foretold.	Ending
+The flames rose higher and the wicked place was destroyed.	Ending
+The monster was destroyed and the city was safe once more.	Ending
+They were buried in the same grave, and the kingdom mourned them.	Ending
+True love had broken the enchantment.	Ending
+Which is how the kingdom got such an unusual name.	Ending
+With the enemy dead they could get married at last.	Ending
+a Mistaken Identity	Event
+Dancing	Event
+Making Friends	Event
+Someone Disobeying	Event
+a Promise	Event
+Singing	Event
+Someone Forgetting	Event
+a Broom	Thing
+Hard Work	Thing
+a Potion	Thing
+Fine Clothes	Thing
+a Mirror	Thing
+a Kiss	Thing
+Jewels	Thing
+Poor	Aspect
+Dressed in Rags	Aspect
+Jealous	Aspect
+Lonely	Aspect
+Fat	Aspect
+Skinny	Aspect
+Dreaming	Aspect
+Wealthy	Aspect
+Bridge	Place
+a Bedchamber	Place
+a Ballroom	Place
+the Underground	Place
+a Stable	Place
+a Throne Room	Place
+a Dwarf	Character
+a Bird	Character
+an Unicorn	Character
+a Godmother	Character
+a Stepsister	Character
+an Ogre	Character
+a Woodsman	Character
+His broken heart was mended.	Ending
+The enchanted item saved them all.	Ending
+The mirror cracked and all her evil was undone.	Ending
+The monster was shown to have a kind heart after all.	Ending
+And that is how they escaped their imprisonment.	Ending
+The disobedient sister was punished at long last.	Ending
+The wondrous beast went back to its forest home and they never saw it again.	Ending
+The potion finally restored his memory.	Ending
+And the hideous beast was transformed into a handsome prince.	Ending
+And the whole city rejoiced because of that kiss.	Ending
+So they were married at last and all the kingdom rejoiced.	Ending
+But he kept it a secret, as he had promised.	Ending
+But he scorned the princess and asked the poor servant to marry him.	Ending
+But they never again took any advice from a fairy.	Ending
+Despite his hideous form, she grew to love him.	Ending
+Which is how a simple maid came to be queen of this land.	Ending
+She wore the same jewel on the day they were married.	Ending
+a Weather Change	Event
+Swimming	Event
+Someone Exiled	Event
+a Shipwreck	Event
+a Chest	Thing
+a Boat	Thing
+a Raft	Thing
+a Pirate Ship	Thing
+Stars	Thing
+a Map	Thing
+a Knife	Thing
+a Bottle	Thing
+Deserted	Aspect
+Diseased	Aspect
+Breathing Water	Aspect
+Washed Ashore	Aspect
+Unconscious	Aspect
+Buried	Aspect
+a Tavern	Place
+an Island	Place
+the Sea	Place
+a Port	Place
+a Beach	Place
+an Underwater Location	Place
+a Foreign Land	Place
+a Cliff	Place
+a Sea Serpent	Character
+a Mermaid	Character
+a Pirate	Character
+a Captain	Character
+a Rat	Character
+a Fish	Character
+a Fisherman	Character
+a Sailor	Character
+This strange creature saved him from a watery grave.	Ending
+They proved themselves to the captain, who took them back home.	Ending
+She had lost everything in the storm except her true friend.	Ending
+Even though the ship was lost, he had made his fortune.	Ending
+With the disease cured, the island became rich once again.	Ending
+He sat on the beach and thought of the treasure he had lost.	Ending
+Then she realized her love had returned from that foreign land, as he had promised.	Ending
+Which is how she came to be queen of that barbaric island.	Ending
+They dug up the chest, but the treasure was long gone.	Ending
+They clung tightly and it carried them all the way home.	Ending
+The terrible sea monster destroyed the boat, and all but one of the sailors was drowned.	Ending
+But she chose to stay with the pirates.	Ending
+And they swam back together to her kingdom beneath the sea.	Ending
+With its treasure returned, the monster was never seen again.	Ending
+The king ordered the island to be removed from all maps so no-one could ever go there again.	Ending
+So he became the most feared pirate in history.	Ending
+So she became the richest merchant in all the world.	Ending
+a Quest	Event
+Breaking a Vow	Event
+a Battle	Event
+a Siege	Event
+Jousting	Event
+Betrayal	Event
+a Challenge	Event
+Armor	Thing
+a Lance	Thing
+a Shield	Thing
+a Love token	Thing
+a Relic	Thing
+a Drawbridge	Thing
+Angry	Aspect
+Unarmed	Aspect
+Reckless	Aspect
+Cowardly	Aspect
+Holy	Aspect
+Merciful	Aspect
+Dishonored	Aspect
+a Castle	Place
+a Manor	Place
+a Pavilion	Place
+a Tournament Field	Place
+a Tomb	Place
+a Border	Place
+a Battlefield	Place
+a Shrine	Place
+a Knight	Character
+a Squire	Character
+a Herald	Character
+a Bandit	Character
+a Wizard	Character
+an Army	Character
+a Priest	Character
+Because of her skill with a lance, women were allowed to become knights from then on.	Ending
+His lady love touched the relic to his lips and he was healed.	Ending
+He won back his weapons and armor through his skill and cunning.	Ending
+Because of her holiness, the terrible war was finally ended.	Ending
+He continued to wear her symbol on his shield from that day onward.	Ending
+Because of his recklessness, his betrayal was revealed.	Ending
+Although she was unarmed, she defeated that mighty opponent and won back her manor.	Ending
+And so the squire overcame his cowardice and saved the day.	Ending
+The herald said it was the strangest joust ever seen in that land.	Ending
+Her quest was completed and her castle was repaired at last.	Ending
+Because the vow had been broken, the battle was lost.	Ending
+He proved his love for her by winning the joust.	Ending
+Her courage drove the bandits away and saved the man she loved.	Ending
+The queen banished the wizard and had the tomb restored to its former glory.	Ending
+The search revealed the stolen love token in his pavilion, and he was punished.	Ending
+The priest's clever solution resolved the border dispute, and so their anger faded.	Ending
+They finally overcame the castle's defenses, and so the long siege ended.	Ending

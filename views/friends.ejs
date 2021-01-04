@@ -1,0 +1,93 @@
+<!--
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    This code serves as a means to contacting and 'friending' other accounts made in the database.
+    The purpose of this is to have easy access to stories created by your contacts.
+    This code will check a valid user in the website database and send a request to 'friend' them.
+    If accepted, their saved stories will become available to the added contact.
+    This code utilizes the materialize library.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+
+
+<!--Add the subtitle of the page.-->
+
+<%- include('layouts/nameBanner', { text: `${name}'s Friends` }) %>
+
+<!--This section adds a collapsible element that displays a list of the user's friends.-->
+<div class="container transition-fade">
+    <form id="bookForm" action="/viewbook" method="POST">
+        <ul class="collapsible popout">
+
+            <!--Populate the collapsible with each friend.-->
+            <% locals.friends.forEach(friend => { %>
+            <li>
+                <div class="collapsible-header valign-wrapper skyBackground2">
+                    <img src="/imgs/avatars/<%- friend.avatar %> " width="67">&nbsp;&nbsp;&nbsp;
+                    <span class="title sizeTwoSpan"><%- friend.fullName %></span>
+                </div>
+                <div class="collapsible-body light-green lighten-5">
+                    <div class="row">        
+                        
+                        <!--Populate each friend with the list of their books and display
+                            them on cards. They all have an invisible radio button
+                            that when clicked (value changed), sends the form.-->
+
+                        <% friend.books.forEach(book => { %>
+                        
+                        <div class="col s6 m4 l3">
+                            <label>
+                                <input id="<%- book.title %>" class="hide" name="avatar" type="radio" value="<%- book.code %>" onchange="this.form.submit();" />
+                                <div class="card hoverable">
+                                    <div class="card-image skyBackground">
+                                        <img src="imgs/<%- book.cover %>" width="300">
+                                    </div>
+                                    <div class="card-content green darken-3">
+                                        <span class="sizeTwoSpan"><%- book.title %></span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <% }); %>
+
+                    </div>
+                </div>
+            </li>
+
+            <% }); %>
+
+        </ul>
+    </form>
+</div>
+
+
+<!--Bottom menu.-->
+
+<div class="row transition-fade">
+    <div class="col s6 m3 offset-m2 l2 offset-l3">
+
+        <!--Card with the main menu link.-->
+
+        <a href="/" class="light-green-text">
+            <div class="card hoverable tooltipped" data-position="bottom" data-tooltip="Go back to the main menu">
+                <div class="card-image">
+                    <img src="imgs/house.png">
+                    <span class="card-title sizeTwoSpan">Main menu</span>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col s6 m3 offset-m2 l2 offset-l2">
+        
+        <!--Card with the new contact link.-->
+
+        <a href="/newfriend" class="light-green-text">
+            <div class="card hoverable tooltipped" data-position="bottom" data-tooltip="Add a new friend">
+                <div class="card-image">
+                    <img src="imgs/phone.png">
+                    <span class="card-title sizeTwoSpan">New contact</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

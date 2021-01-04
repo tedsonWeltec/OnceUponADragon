@@ -1,0 +1,73 @@
+<!--
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    This code shows the login screen where the user can enter their account.
+    It displays a splash image inside a card with a couple of text inputs for the
+    username and password, with a button to send the form to the router.
+    This code utilizes the materialize library.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+
+<div class="row light-green lighten-3 transition-fade">
+
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card">
+
+            <!--Main splash image and welcome message.-->
+
+            <div class="card-image">
+                <img src="imgs/moon background.jpg">
+                <span class="card-title light-green-text text-lighten-5 bigTitleSpan">Login to the site</span>
+            </div>
+
+            <!--Form to submit the user login information.-->
+
+            <div class="card-content">
+                <div class="row">
+                    <form class="col s12" action="/login" method="POST">
+                        <div class="row">
+
+                            <!--Username.-->
+
+                            <div class="input-field col s5">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" type="text" class="validate" name="userName" required
+                                    aria-required="true">
+                                <label for="icon_prefix">Username</label>
+                            </div>
+
+                            <!--Password.-->
+
+                            <div class="input-field col s5">
+                                <i class="material-icons prefix">vpn_key</i>
+                                <input id="icon_telephone" type="password" class="validate" name="password" required
+                                    aria-required="true">
+                                <label for="icon_telephone">Password</label>
+                            </div>
+
+                            <!--Send.-->
+
+                            <button class="col s2 btn-large waves-effect waves-light green darken-3" type="submit">Login
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </form>
+
+
+                    <!--If there are any errors, the router will take the user back here and display
+                        an error message.-->
+
+                    <% if (messages.error) { %><p>&nbsp;</p>
+                    <p class="red-text"><%= messages.error %></p><% } %>
+                </div>
+            </div>
+
+
+            <!--Card footer with a couple of options for the user. In case they don't have an account.-->
+
+            <div class="card-action">
+                <a href="/register" class="light-green-text">Create a new account</a>
+            </div>
+        </div>
+    </div>
+
+</div>

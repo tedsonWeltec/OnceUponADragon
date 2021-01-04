@@ -1,0 +1,98 @@
+<!--
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        This page of code is dedicated to the player selection screen of the website.
+        Here the user can input player names up to 10 individuals and select colors to represent them.
+        This page makes use of the materialize library.
+        Once the players are selected, names are inputted and colors are chosen, the user can press
+        the send button to launch up a blank story with the chosen players.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+
+<div id="playersDialog" class="row light-green lighten-3 fadeOut transition-fade">
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card">
+            <div class="card-content newbookBackground center-align" style="padding: 15px;">
+                <span class="sizeTwoSpan">Enter the player's names</span>
+                <div class="row">
+                    <div class="col l6">
+
+                        <!--The below code is the textbox and color selection for the players (1 to 5).-->
+
+                        <% for( let playerNumber = 1; playerNumber <= 5; playerNumber++ ) { %>
+
+                        <a id="color<%- playerNumber %>" href="#changeColor"
+                            class="tooltipped modal-trigger btn btn-floating green darken-3 playerModalTrigger" data-position="bottom"
+                            data-tooltip="Change your color" data-color="green">
+                        </a>
+                        <div class="input-field" style="display: inline-block; width: calc(100% - 45px);">
+                            <input id="player<%- playerNumber %>" type="text" class="validate greenSizeOneFiveSpan"
+                                name="player<%- playerNumber %>" maxlength="15">
+                            <label for="player<%- playerNumber %>">Player <%- playerNumber %></label>
+                        </div>
+
+                        <% } %>
+
+                    </div>
+
+                    <!--The below code represents a new column on the grid, which will range from players 6 to 10.-->
+
+                    <div class="col l6">
+
+                        <% for( let playerNumber = 6; playerNumber <= 10; playerNumber++ ) { %>
+
+                        <a id="color<%- playerNumber %>" href="#changeColor"
+                            class="tooltipped modal-trigger btn btn-floating green darken-3 playerModalTrigger" data-position="bottom"
+                            data-tooltip="Change your color" data-color="green">
+                        </a>
+                        <div class="input-field" style="display: inline-block; width: calc(100% - 45px);">
+                            <input id="player<%- playerNumber %>" type="text" class="validate greenSizeOneFiveSpan"
+                                name="player<%- playerNumber %>" maxlength="15">
+                            <label for="player<%- playerNumber %>">Player <%- playerNumber %></label>
+                        </div>
+
+                        <% } %>
+
+                    </div>
+                    
+                </div>
+
+                <!--The below code is the button which will send the textbox inputs through and start the creation process.-->
+
+                <div class="center-align">
+                    <button id="btnSelectThemes" class="s2 btn waves-effect waves-light green darken-3">Select themes
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+
+            </div>
+            <!--
+            <div class="card-action">
+                <a href="/" class="light-green-text">Back to the Main Menu</a>
+            </div>
+            -->
+        </div>
+    </div>
+
+</div>
+
+<!--This element is normally hidden but shows up when the user click the change color button.
+    It displays a series of boxes with the different colors to pick from and when something is
+    selected, the code on newbook.js updates the circles in the player selection dialog.-->
+
+<div id="changeColor" class="modal">
+    <div class="modal-content light-green lighten-3">
+        <div class="row">
+            <% colors.forEach(color => { %>
+            <div class="col s4 m3 l2 modal-close">
+                <label for="<%- color %>">
+                    <input id="<%- color %>" class="hide colorSelector" name="color" type="radio"
+                        value="<%- color %>" />
+                    <div class="card hoverable <%- color %> darken-3">
+                        <div class="card-content"></div>
+                    </div>
+                </label>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</div>

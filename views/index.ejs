@@ -1,0 +1,65 @@
+<!--
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    This code shows the 'main menu' only available to those who have logged in to the system.
+    This will grant functionality not available to those who haven't logged in.
+    This also enables the logout function, and will change the default screen from which users
+    not logged in will experience.
+    This code utilizes the materialize library.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+
+
+<!--Add the subtitle of the page.-->
+
+<%- include('layouts/nameBanner', { text: `Welcome ${name}!` }) %>
+
+
+<!--Show the different options in responsive columns.
+    Each card has a mouse hover effect that adds a shadow, a tooltip that provides
+    more info and a link to the corresponding page.-->
+<div class="row transition-fade">
+    <div class="col s6 m4 l3 offset-l1">
+
+        <!--Contacts/Friends.-->
+        <a class="light-green-text logout">
+            <div class="card hoverable tooltipped" data-position="bottom" data-tooltip="Logout from the site">
+                <div class="card-image">
+                    <img src="imgs/logout.jpg">
+                    <span class="card-title sizeTwoSpan">Logout</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col s6 m4 l4">
+
+        <!--New book.-->
+        <a href="/newbook" class="light-green-text">
+            <div class="card hoverable tooltipped" data-position="bottom" data-tooltip="Create and share a new story">
+                <div class="card-image">
+                    <img src="imgs/newbook.png">
+                    <span class="card-title sizeTwoSpan">New storybook</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col s6 m4 l3">
+
+        <!--View saved books.-->
+        <a href="/books" class="light-green-text">
+            <div class="card  hoverable tooltipped" data-position="bottom" data-tooltip="View your existing storybooks">
+                <div class="card-image">
+                    <img src="imgs/books2.png">
+                    <span class="card-title sizeTwoSpan">Saved storybooks</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<script>
+    $(".logout").click(() => {
+        $("#logoutForm").submit()
+    })
+</script>

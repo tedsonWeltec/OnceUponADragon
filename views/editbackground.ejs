@@ -1,0 +1,192 @@
+<div class="row ">
+    <div class="col s12 m8 l7 offset-l2">
+        <div class="card">
+            <div class="card-image">
+                <img id="pageBackground" src="<%- pageBackground %>">
+                <span id="pageText" class="card-title sizeOneFiveSpan"
+                    style="z-index: 1; margin: 24px; padding: 0; background-color: rgba(0, 0, 0, 0.5);">
+                    Sample text to be displayed in the book's page
+                </span>
+                <img id="character1" src="imgs/character placeholder.png" class="bottomleft">
+                <img id="character3" src="imgs/character placeholder.png" class="bottomCenter">
+                <img id="character2" src="imgs/character placeholder.png" class="bottomRight">
+            </div>
+
+            <div class="card-content" style="padding: 20px;">
+                <span>Horizontal margins</span>
+                <div id="sliderHorizontal" style="margin: 15px;"></div>
+                <span>Vertical margins</span>
+                <div id="sliderVertical" style="margin: 15px;"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--This is a collection of elements with a header that display the player list.-->
+
+    <div class="col s12 m4 l3">
+        <div class="card">
+            <div class="card-content" style="padding: 20px;">
+                <div class="row">
+                    <div class="col s12">
+                        <textarea id="pageInput" class="materialize-textarea" placeholder="Background name"
+                            data-length="200" maxlength="200"><%- pageInput %></textarea>
+                    </div>
+                    <div class="col s12 center-align">
+                        <a id="btnSetMargins" class="btn waves-effect waves-light green darken-3"
+                            style="margin-top: 5px; width: 100%;">
+                            <i class="material-icons right">book</i>Set margins
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul class="hide">
+    <% backgrounds.forEach(background => { %>
+    <li class="backgroundData"><%- background %></li>
+    <% }); %>
+</ul>
+
+<form id="editBackgroundForm" action="/editbackground" method="POST" class="hide">
+    <input id="newBackgroundName" type="text" name="newBackgroundName">
+    <input id="oldBackgroundName" type="text" name="oldBackgroundName">
+    <input id="oldPageInput" type="text" name="oldPageInput">
+</form>
+
+<script src="js/nouislider/nouislider.js"></script>
+<script>
+
+var slider1 = document.getElementById('sliderHorizontal')
+var slider2 = document.getElementById('sliderVertical')
+const sliderConfig = {
+    start: [0, 100],
+    connect: true,
+    step: 1,
+    orientation: 'horizontal', // 'horizontal' or 'vertical'
+    range: {
+    'min': 0,
+    'max': 100
+    },
+    format: wNumb({
+        decimals: 0
+    })
+}
+noUiSlider.create(slider1, sliderConfig);
+noUiSlider.create(slider2, sliderConfig);
+
+slider1.noUiSlider.on('update', function () {
+    $('#pageText').css("left", this.get()[0] + "%")
+    $('#pageText').css("right", (100 - this.get()[1]) + "%")
+})
+slider2.noUiSlider.on('update', function () {
+    $('#pageText').css("top", this.get()[0] + "%")
+    $('#pageText').css("bottom", (100 - this.get()[1]) + "%")
+})
+
+var backgrounds = []
+currentBackground = $("#pageBackground").attr("src")
+updateMargins()
+$(".backgroundData").each(function() {
+    backgrounds.push("imgs/backgrounds/"+$(this).text())
+})
+
+$('#pageInput').keyup(function () {
+    let input = this.value
+
+    const symbols = new RegExp(/(\W+|_+)/,"g")
+    input = input.toLowerCase().replace(symbols," ").split(" ")
+
+    const newBackground = countTags(backgrounds, input)
+        if (newBackground != "" && newBackground != currentBackground) {
+            currentBackground = newBackground
+            $("#pageBackground").attr("src", currentBackground)
+            updateMargins()
+        }
+})
+
+$('#btnSetMargins').click(function () {
+    M.toast({html: 'Margins set!', displayLength: 2000, classes: 'green darken-3'})
+    let newBackgroundName = ""
+    const marginDataRE = new RegExp(/c\(.*\)/,"g")
+
+    let newMarginData = "c(" +
+                        (100 - slider1.noUiSlider.get()[1]) +
+                        "," +
+                        slider2.noUiSlider.get()[0] +
+                        "," +
+                        slider1.noUiSlider.get()[0] +
+                        "," +
+                        (100 - slider2.noUiSlider.get()[1]) +
+                        ")"
+    
+    let marginData = currentBackground.match(marginDataRE)
+    if (marginData == null) {
+        newBackgroundName = currentBackground.split(".").join(" "+newMarginData + ".")
+    } else {
+        newBackgroundName = currentBackground.split(marginDataRE).join(newMarginData)
+    }
+    
+    $('#newBackgroundName').val(newBackgroundName)
+    $('#oldBackgroundName').val(currentBackground)
+    $('#oldPageInput').val($('#pageInput').val())
+    $('#editBackgroundForm').submit()
+})
+
+function countTags(collection, input, usedCharacters = []) {
+    // Set up variables
+    let tagsCount = {}
+    let usedTags = []
+    //Check if we used a character already, removing their tags to prevent duplicates (gir and girl crying, for example)
+    usedCharacters.forEach(usedChar => {
+        if (usedChar == "") { return 0; }
+        //This is just removing the "/img/backgrounds/" and the extension (.jpg, .png, etc)
+        const usedCharTags = usedChar.split("/")[2].split(".")[0].split(" ")
+        usedTags = usedTags.concat(usedCharTags)
+    })
+    // Cycle trough the collection (backgrounds or characters) and find all the tags
+    // Comparing them with the input and counting them, keeping the count on tagsCount
+    collection.forEach(item => {
+        // If we used a character already, skip
+        if (usedCharacters.includes(item)) { return 0; }
+        //This is just removing the "/img/backgrounds/" and the extension (.jpg, .png, etc)
+        const collectionTags = item.split("/")[2].split(".")[0].split(" ")
+        tagsCount[item] = 0
+        // If the input has the tag and we haven't used that tag yet, increase that tag's count
+        collectionTags.forEach(tag => {
+            if (tag.substr(0,2) == "c(") { return 0; }
+            if (input.includes(tag) && !usedTags.includes(tag)) {
+                tagsCount[item]++
+            }
+        })
+    })
+
+    // Which tag has the most results from the input?
+    // For example:
+    // Input: girl crying   Picture 1: girl (1)     Picture 2: girl crying (2)
+    // We select the picture 2 because it has more tags matching the input
+    let maxCount = 0
+    let selectedItem = ""
+    Object.keys(tagsCount).forEach(item => {
+        if (tagsCount[item] > maxCount) {
+            maxCount = tagsCount[item]
+            selectedItem = item
+        }
+    })
+    
+    return selectedItem
+}
+
+function updateMargins() {
+    let tempTags = currentBackground.split("/")[2].split(".")[0].split(" ")
+    tempTags.forEach(tag => {
+        if (tag.substr(0,2) == "c(") {
+            let margins = tag.split("(")[1].split(")")[0].split(",")
+            slider1.noUiSlider.set([margins[2], 100 - margins[0]])
+            slider2.noUiSlider.set([margins[1], 100 - margins[3]])
+        }  
+    })
+}
+</script>

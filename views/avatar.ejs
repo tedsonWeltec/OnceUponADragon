@@ -1,0 +1,36 @@
+<!--
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    This code allows the user to select the avatar associated with their account.
+    When the icon is clicked, it will bring forth a page with a variety of different
+    icons for the user to choose from.
+    This makes use of the materialize library.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+
+<!--Add the subtitle of the page.-->
+<%- include('layouts/nameBanner', { text: `${name}'s Avatars` }) %>
+
+
+<form id="avatarForm" action="/avatar" method="POST">
+    <div class="row transition-fade">
+
+        <% locals.avatars.forEach(avatar => { %>
+            <div class="col s4 m3 l2">
+
+                <!--Get all the posible avatars and display them on cards. They all have an invisible radio button
+                    that when clicked (value changed), sends the form, updating the user's avatar.-->
+
+                <label for="<%- avatar %>">
+                    <input id="<%- avatar %>" class="hide" name="avatar" type="radio" value="<%- avatar %>" onchange="this.form.submit();" />
+                    <div class="card hoverable skyBackground">
+                        <div class="card-image">
+                            <img src="imgs/avatars/<%- avatar %>">
+                        </div>
+                    </div>
+                </label>
+            </div>
+        <% }); %> 
+
+    </div>
+</form>
+

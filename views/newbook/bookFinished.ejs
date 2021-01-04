@@ -1,0 +1,43 @@
+<!--
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+
+<div class="row light-green lighten-3 transition-fade">
+    <div class="col s12 m10 offset-m1 l8 offset-l2">
+        <div class="card">
+            <div class="card-content newbookBackground light-green-text text-lighten-5">
+                <span class="bigTitleSpan">Book finished!</span>
+                <p class="greenSizeOneFiveSpan center-align">
+                    <br>
+                    The book is now complete, you can view it by clicking on the cover.
+                </p>
+                
+                <form action="/viewbook" method="POST" class="center-align">
+                    <label for="<%- book.title %>">
+                        <input id="<%- book.title %>" class="hide" name="code" type="radio" value="<%- book.code %>" onchange="this.form.submit();" />
+                        <div class="card hoverable" style="display: inline-block; margin: 1rem;">
+                            <div class="card-image">
+                                <img src="<%- book.cover.background %>" style="width: 400px;">
+                                <span class="card-title sizeOneFiveSpan" style="z-index: 1; top: 0; text-align: left;"><%- book.title %></span>
+                                <img src="<%- book.cover.character1 %>" class="bottomleft">
+                                <img src="<%- book.cover.character3 %>" class="bottomCenter">
+                                <img src="<%- book.cover.character2 %>" class="bottomRight">
+                            </div>
+                        </div>
+                    </label>
+                    
+                </form>
+                <div class="center-align">
+                    <p class="greenSizeOneFiveSpan">Share the book with the following code:</p>
+                    <span class="bigTitleSpan"><%- book.code %></span>
+                </div>
+            </div>
+            <div class="card-action">
+                <a href="/" class="light-green-text">Main menu</a>
+                <a href="/books" class="light-green-text">Saved books</a>
+            </div>
+        </div>
+    </div>
+</div>
